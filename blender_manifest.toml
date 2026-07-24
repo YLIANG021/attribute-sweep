@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+
+id = "attribute_sweep"
+version = "1.0.1"
+name = "Attribute Sweep"
+tagline = "Scan and clean mesh attributes across multiple objects"
+maintainer = "YLIANG"
+type = "add-on"
+
+tags = ["Mesh"]
+blender_version_min = "4.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
