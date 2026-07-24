@@ -1,16 +1,30 @@
 # Attribute Sweep
 
-Attribute Sweep is a Blender extension for scanning and safely removing mesh
-attributes across multiple selected objects.
+Attribute Sweep is a focused cleanup tool for mesh attributes. It inventories
+the attributes used by a selection of mesh objects, helps trace where each one
+is stored, then removes only the attributes you explicitly approve.
 
-## Features
+It is built for the awkward cleanup pass: imported assets, experiments, or
+Geometry Nodes workflows can leave a selection with attributes that are no
+longer needed. Attribute Sweep makes the destructive step inspectable first.
 
-- Scans manageable geometry attributes on selected mesh objects.
-- Filters and batch-selects attributes by name.
-- Shows attribute domain and data type, including mismatches across meshes.
-- Selects the objects containing a scanned attribute.
-- Shows the number of affected objects and warns when shared mesh data will be
-  affected before deletion.
+## Audit Before Cleanup
+
+- Builds one inventory row per attribute name across the selected mesh objects.
+- Shows each attribute's domain and data type, and flags the names whose
+  definition differs between meshes.
+- Lets you select the objects that contain a scanned attribute, so a result can
+  be inspected in context before it is removed.
+- Searches, selects, clears, or inverts the current cleanup list in batches.
+- Calculates how many attributes and object users will be affected. A warning
+  appears when deletion changes shared mesh data.
+- Skips Blender internal and required attributes during the scan.
+
+## Purposeful Scope
+
+Attribute Sweep does not create attributes, edit their values, or rename them.
+It stays narrowly focused on reviewing and removing unwanted attributes across
+a multi-object selection.
 
 ## Installation
 
@@ -19,10 +33,13 @@ Extensions > Install from Disk, then enable Attribute Sweep.
 
 ## Usage
 
-1. Select one or more mesh objects.
-2. Open Object Data Properties > Attributes.
-3. Click the trash-can button beside the Attributes panel title.
-4. Click **Scan**, select the attributes to remove, then click **Delete**.
+1. Select the mesh objects to audit.
+2. Open **Object Data Properties > Attributes**.
+3. Click the trash-can button next to the Attributes panel title.
+4. Click **Scan** to build the attribute inventory.
+5. Inspect or filter the results, and optionally use the object-selection
+   button on a row to locate its users.
+6. Select the unwanted attributes and click **Delete**.
 
 ## License
 
