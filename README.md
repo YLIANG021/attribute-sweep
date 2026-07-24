@@ -1,30 +1,30 @@
 # Attribute Sweep
 
-Attribute Sweep is a focused cleanup tool for mesh attributes. It inventories
-the attributes used by a selection of mesh objects, helps trace where each one
-is stored, then removes only the attributes you explicitly approve.
+Attribute Sweep is a small cleanup tool for mesh attributes you do not need
+anymore. Pick a group of mesh objects, scan them, and clean up the attributes
+you choose.
 
-It is built for the awkward cleanup pass: imported assets, experiments, or
-Geometry Nodes workflows can leave a selection with attributes that are no
-longer needed. Attribute Sweep makes the destructive step inspectable first.
+It is handy after importing assets, testing Geometry Nodes, or any time a bunch
+of objects have picked up leftover attributes. You can see what will change
+before deleting anything.
 
-## Audit Before Cleanup
+## What It Helps With
 
-- Builds one inventory row per attribute name across the selected mesh objects.
-- Shows each attribute's domain and data type, and flags the names whose
-  definition differs between meshes.
-- Lets you select the objects that contain a scanned attribute, so a result can
-  be inspected in context before it is removed.
-- Searches, selects, clears, or inverts the current cleanup list in batches.
-- Calculates how many attributes and object users will be affected. A warning
-  appears when deletion changes shared mesh data.
-- Skips Blender internal and required attributes during the scan.
+- Gives you one list of the attributes found on the selected mesh objects.
+- Shows the attribute type and where it lives, and points out when the same
+  name means different things on different meshes.
+- Lets you select the objects that use an attribute, so you can check them
+  before removing it.
+- Lets you search the list and select, clear, or invert several entries at once.
+- Tells you how many attributes and objects will change. It also warns you when
+  the mesh data is shared by other objects.
+- Leaves Blender's internal and required attributes alone.
 
-## Purposeful Scope
+## What It Does Not Try To Do
 
-Attribute Sweep does not create attributes, edit their values, or rename them.
-It stays narrowly focused on reviewing and removing unwanted attributes across
-a multi-object selection.
+Attribute Sweep does not create attributes, change their values, or rename
+them. It is just for finding and clearing unwanted attributes from a group of
+objects.
 
 ## Installation
 
@@ -33,12 +33,12 @@ Extensions > Install from Disk, then enable Attribute Sweep.
 
 ## Usage
 
-1. Select the mesh objects to audit.
+1. Select the mesh objects you want to clean up.
 2. Open **Object Data Properties > Attributes**.
 3. Click the trash-can button next to the Attributes panel title.
-4. Click **Scan** to build the attribute inventory.
-5. Inspect or filter the results, and optionally use the object-selection
-   button on a row to locate its users.
+4. Click **Scan** to see what attributes they have.
+5. Check or filter the list. You can also use the button on a row to select the
+   objects that use that attribute.
 6. Select the unwanted attributes and click **Delete**.
 
 ## License
