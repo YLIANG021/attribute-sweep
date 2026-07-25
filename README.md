@@ -1,46 +1,57 @@
 # Attribute Sweep
 
-Attribute Sweep is a small cleanup tool for mesh attributes you do not need
-anymore. Pick a group of mesh objects, scan them, and clean up the attributes
-you choose.
+Attribute Sweep lets you select and delete mesh attributes in batches.
 
-It is handy after importing assets, testing Geometry Nodes, or any time a bunch
-of objects have picked up leftover attributes. You can see what will change
-before deleting anything.
+Select multiple mesh objects and scan them to see their removable attributes in one list. You can first locate the objects that use an attribute, then decide whether to delete it.
 
-## What It Helps With
+## Selection
 
-- Gives you one list of the attributes found on the selected mesh objects.
-- Shows the attribute type and where it lives, and points out when the same
-  name means different things on different meshes.
-- Lets you select the objects that use an attribute, so you can check them
-  before removing it.
-- Lets you search the list and select, clear, or invert several entries at once.
-- Tells you how many attributes and objects will change. It also warns you when
-  the mesh data is shared by other objects.
-- Leaves Blender's internal and required attributes alone.
+After scanning, Attribute Sweep gathers removable attributes from the selected mesh objects into a single list.
 
-## What It Does Not Try To Do
+Click the selection icon on the right side of any row to quickly select the objects that use that attribute, so you can inspect them first. You can also search the list, select all, deselect all, or invert the selection.
 
-Attribute Sweep does not create attributes, change their values, or rename
-them. It is just for finding and clearing unwanted attributes from a group of
-objects.
+<img width="897" height="450" alt="7月25日" src="https://github.com/user-attachments/assets/c206c738-5f47-4edd-a8d0-348fc7abd0a1" />
 
-## Installation
 
-In Blender 4.2 or newer, install the packaged extension from Preferences > Get
-Extensions > Install from Disk, then enable Attribute Sweep.
 
-## Usage
+## Deletion
 
-1. Select the mesh objects you want to clean up.
-2. Open **Object Data Properties > Attributes**.
-3. Click the trash-can button next to the Attributes panel title.
-4. Click **Scan** to see what attributes they have.
-5. Check or filter the list. You can also use the button on a row to select the
-   objects that use that attribute.
-6. Select the unwanted attributes and click **Delete**.
+Check the attributes you want to clean up, then click **Delete**. Attribute Sweep removes them in batches from the relevant mesh data found during the scan.
+
+Before deletion, it shows how many attributes and objects will be affected. It also warns you when mesh data is shared by other objects.
+
+<img width="897" height="450" alt="7月25日(1)" src="https://github.com/user-attachments/assets/480af9c6-3f07-411d-973d-2faaeba8a58a" />
+
+
+## Where to Find It
+
+Open **Object Data Properties > Attributes**.
+
+Click the trash-can icon next to the Attributes panel title to open Attribute Sweep.
+
+## Language Support
+
+- English
+- Chinese (Simplified / Traditional)
+- Japanese
+- Korean
+- German
+- French
+- Spanish
+- Italian
+- Portuguese
+- Polish
+- Russian
+- Vietnamese
+
+---
+
+## Supported Blender Versions
+
+- Blender **4.2** to **5.3**
+
+---
 
 ## License
 
-GPL-3.0-or-later. See `blender_manifest.toml` for extension metadata.
+GNU General Public License v3.0 or later
